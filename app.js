@@ -88,35 +88,67 @@
 
 // OOP Challenge Completed
 
-function Player(name) {
-  this.name = name;
-  this.lvl = 1;
-  this.points = 0;
-}
+// function Player(name) {
+//   this.name = name;
+//   this.lvl = 1;
+//   this.points = 0;
+// }
 
-Player.prototype.gainXp = function (num) {
-  this.points += num;
-  if (this.points >= 10) {
-    this.lvl++;
-    this.points -= 10;
-  }
-  console.log(this.describe());
-};
+// Player.prototype.gainXp = function (num) {
+//   this.points += num;
+//   if (this.points >= 10) {
+//     this.lvl++;
+//     this.points -= 10;
+//   }
+//   console.log(this.describe());
+// };
 
-Player.prototype.describe = function () {
-  return `${this.name} is level ${this.lvl} with ${this.points} experinces points`;
-};
+// Player.prototype.describe = function () {
+//   return `${this.name} is level ${this.lvl} with ${this.points} experinces points`;
+// };
 
-let player1 = new Player('Tim');
-let player2 = new Player('Bob');
+// let player1 = new Player('Tim');
+// let player2 = new Player('Bob');
 
-player1.gainXp(5);
-player2.gainXp(7);
-player1.gainXp(3);
-player2.gainXp(2);
-player1.gainXp(8);
-player2.gainXp(4);
-player1.gainXp(5);
+// player1.gainXp(5);
+// player2.gainXp(7);
+// player1.gainXp(3);
+// player2.gainXp(2);
+// player1.gainXp(8);
+// player2.gainXp(4);
+// player1.gainXp(5);
 
 // console.log(player1.describe());
 // console.log(player2.describe());
+
+// CLASSES
+
+class Rectangle {
+  constructor(name, width, height) {
+    this.name = name;
+    this.width = width;
+    this.height = height;
+  }
+
+  area() {
+    return this.height * this.width;
+  }
+
+  perimeter() {
+    return 2 * (this.width + this.height);
+  }
+
+  isSquare() {
+    return this.width === this.height;
+  }
+
+  logArea() {
+    console.log('Rectangle Area: ' + this.area());
+  }
+}
+
+const square = new Rectangle('Square', 20, 20);
+console.log(square.area());
+console.log(square.perimeter());
+console.log(square.isSquare());
+square.logArea();
