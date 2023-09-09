@@ -156,43 +156,43 @@
 // CLASS INHERITENCE
 
 // Parent Class
-class Shape {
-  constructor(name) {
-    this.name = name;
-  }
+// class Shape {
+//   constructor(name) {
+//     this.name = name;
+//   }
 
-  logName() {
-    console.log('Shape Name: ' + this.name);
-  }
-}
+//   logName() {
+//     console.log('Shape Name: ' + this.name);
+//   }
+// }
 
-// Sub Class
-class Rectangle extends Shape {
-  constructor(name, width, height) {
-    super(name);
+// // Sub Class
+// class Rectangle extends Shape {
+//   constructor(name, width, height) {
+//     super(name);
 
-    this.width = width;
-    this.height = height;
-  }
-  logName() {
-    console.log('Rectangle Name: ' + this.name);
-  }
-}
+//     this.width = width;
+//     this.height = height;
+//   }
+//   logName() {
+//     console.log('Rectangle Name: ' + this.name);
+//   }
+// }
 
-class Square extends Rectangle {
-  constructor(name, width, height) {
-    super('Square 1', 20, 20);
-  }
-}
+// class Square extends Rectangle {
+//   constructor(name, width, height) {
+//     super('Square 1', 20, 20);
+//   }
+// }
 
-const rect = new Rectangle('Rect 1', 10, 20);
-console.log(rect);
-rect.logName();
+// const rect = new Rectangle('Rect 1', 10, 20);
+// console.log(rect);
+// rect.logName();
 
-const sqr = new Square();
-console.log(sqr);
-sqr.logName();
-console.log(rect instanceof Rectangle);
-console.log(rect instanceof Shape);
-console.log(sqr instanceof Rectangle);
-console.log(sqr instanceof Shape);
+// const sqr = new Square();
+// console.log(sqr);
+// sqr.logName();
+// console.log(rect instanceof Rectangle);
+// console.log(rect instanceof Shape);
+// console.log(sqr instanceof Rectangle);
+// console.log(sqr instanceof Shape);
