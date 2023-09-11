@@ -196,3 +196,54 @@
 // console.log(rect instanceof Shape);
 // console.log(sqr instanceof Rectangle);
 // console.log(sqr instanceof Shape);
+
+// Getter and Setter with private field
+
+class Wallet {
+  #balance = 0;
+  #transactions = [];
+
+  deposit(amount) {
+    this.#processDeposit(amount);
+    this.#balance += amount;
+  }
+
+  widthraw(amount) {
+    if (amount > this.#balance) {
+      console.log('Not Enough Balance');
+      return;
+    }
+    this.#processWidthraw(amount);
+    this.#balance -= amount;
+  }
+
+  #processDeposit(amount) {
+    console.log(`Depositing ${amount}`);
+
+    this.#transactions.push({
+      type: 'deposit',
+      amount,
+    });
+  }
+  #processWidthraw(amount) {
+    console.log(`Widthdrawing ${amount}`);
+
+    this.#transactions.push({
+      type: 'widthdraw',
+      amount,
+    });
+  }
+
+  get balance() {
+    return this.#balance;
+  }
+
+  get transactions() {
+    return this.#transactions;
+  }
+}
+
+const wallet = new Wallet();
+wallet.deposit(400);
+wallet.widthraw(100);
+console.log(wallet.balance);
